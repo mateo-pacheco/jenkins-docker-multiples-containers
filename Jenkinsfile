@@ -1,5 +1,10 @@
 pipeline {
     agent none
+        environment {
+        HOME = '/tmp'
+        MAVEN_CONFIG = '/tmp/.m2'
+        MAVEN_OPTS = '-Duser.home=/tmp -Dmaven.repo.local=/tmp/.m2/repository'
+    }
     stages {
         stage('Build') {
             agent {
